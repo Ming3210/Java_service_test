@@ -28,10 +28,7 @@ public class SpringSecurity {
     @Autowired
     private JWTAuthFilter jwtAuthFilter;
 
-//    @Bean
-//    public AuthenticationEntryPoint authenticationEntryPoint(){
-//        return new JWTAuthenticationEntryPoint();
-//    }
+
 
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration) throws Exception{

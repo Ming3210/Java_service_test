@@ -71,4 +71,12 @@ public class CustomerServiceImpl implements CustomerService {
             throw new NoSuchElementException("User not found");
         }
     }
+
+    @Override
+    public void logout(String token) {
+        String username = jwtProvider.getUsernameFromToken(token);
+        Customer customer = customerRepository.findByUsername(username).orElseThrow(()-> new NoSuchElementException("User not found"));
+        customer.setIsLogin(false);
+        customerRepository.save(customer);
+    }
 }

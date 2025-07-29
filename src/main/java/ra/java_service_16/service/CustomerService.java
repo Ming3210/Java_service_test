@@ -9,4 +9,6 @@ public interface CustomerService {
     Customer register(UserRegister userRegister);
     JWTResponse login(UserLogin userLogin);
 
+    void logout(String token);
+
 }
